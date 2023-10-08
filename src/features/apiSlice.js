@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 export const webcationAPI = createApi({
     reducerPath: 'webcationAPI',
@@ -28,10 +28,6 @@ export const webcationAPI = createApi({
             query: ()=> '/webcams/api/v3/webcams?&limit=20&offset=0&include=images'
         })
     })
-
-    
-    
-    
 })
 export const {
     useGetWebcamsQuery,
