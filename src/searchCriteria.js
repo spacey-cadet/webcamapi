@@ -20,36 +20,38 @@ const SearchCriteria = () => {
     if(isErrorContinents){
       return 'something went wrong :('
     }
+      console.log(categories)
+      console.log(continents)
+      console.log(countries)
   
   return (
     <div className="landing">
       <div className="searches">
         <div className='continents'>
           <h5>Continents</h5>
-        {continents.map(continent=>(
+        {
+        continents.length ? (continents.map(continent=>(
               <div key={continent.id}>{continent.name}</div>
-          ))}
+          ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='categories'>
           <h5>Categories</h5>
           {
-            categories.map(category=>(
-                <div key={category.id}>{category.name}</div>
-
-            ))
-          }
+        categories.length ? (categories.map(category=>(
+              <div key={category.id}>{category.name}</div>
+          ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='countries'>
           <h5>Countries</h5>
           {
-            countries.map(country=>(
+            countries.length ? (countries.map(country=>(
                 <div key={country.id}>{country.name}</div>
-            ))
+            ))) : (<div>Something went wrong</div>)
           }
         </div>
       </div>
       <div className="outlet"><Outlet/></div>
-       <div className="coordinates"></div>
+      <div className="coordinates"></div>
       
     </div>
   )
