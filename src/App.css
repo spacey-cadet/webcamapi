@@ -5,6 +5,7 @@ body{
 .landing{
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
 .landing .searches{
     flex: 1;
@@ -126,6 +127,18 @@ body{
     position: sticky;
     top: 0;
 }
+
+
+/*select*/
+.select{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.select .search-dropdown{
+    padding: 1rem;
+}
+
 
 
 
