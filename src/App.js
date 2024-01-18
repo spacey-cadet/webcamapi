@@ -1,18 +1,19 @@
 import './App.css';
 import { BrowserRouter as  Router, Routes,  Route } from 'react-router-dom'
-import { useGetCategoriesQuery} from './features/apiSlice';
 import Landing from './landing';
+import SearchCriteria from './searchCriteria';
 
 function App() {
 
   return (
+    
     <Router>
       <Routes>
-        <Route path='/' element={ <Landing/>} 
-              loader={useGetCategoriesQuery}/>
+        <Route path='/' element={<SearchCriteria/>}>
+          <Route index element={<Landing/>}/>
+        </Route>
       </Routes>
     </Router>
-
 
   );
 }

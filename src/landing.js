@@ -1,49 +1,28 @@
-import { useGetCategoriesQuery,
-  useGetContinentsQuery, useGetWebcamsQuery } from "./features/apiSlice"
+import { useGetWebcamsQuery } from "./features/apiSlice"
 
 const Landing = () => {
 
-  const {data: webcamsobject , isLoadingWebcams, isErrorWebcams }= useGetWebcamsQuery()
-  const {data: categories , isLoadingcategories, isErrorCategories}= useGetCategoriesQuery()
-  const {data: continents , isLoadingContinents, isErrorContinents}= useGetContinentsQuery()
+  const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetWebcamsQuery()
 
-  if(isLoadingContinents){
-    return '...'
-  }
-  if(isLoadingcategories){
-    return '...'
-  }
   if(isLoadingWebcams){
     return '...'
   }
-  if(isErrorCategories){
-    return 'something went wrong :('
-  }
+
   if(isErrorWebcams){
     return 'something went wrong :('
   }
-  if(isErrorContinents){
-    return 'something went wrong :('
-  }
-  
-    console.log(categories)
-    console.log(continents)
-    console.log(webcamsobject.webcams)
+ 
     const webcams = webcamsobject.webcams
+    console.log(webcams)
    
   return (
-    <div>
+    <div className='webcams'>
       {webcams.map(webcam=>(
-        <div key={webcam.webcamId}>
+        <div className='webcam' key={webcam.webcamId}>
           <img src={webcam.images.current.preview} alt=""/>
-          <img src={webcam.images.current.icon} alt=""/>
-          <img src={webcam.images.current.thumbnail} alt=""/>
-          <img src={webcam.images.daylight.thumbnail} alt=""/>
-          <img src={webcam.images.daylight.preview} alt=""/>
+          <div className="webcamsInfo">{webcam.title}</div>
         </div>
       ))}
-
-
     </div>
   )
 }
