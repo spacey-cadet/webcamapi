@@ -4,7 +4,9 @@ import { useGetCategoriesQuery,useGetCountriesQuery,
     import { useState } from "react"
 
 const SearchCriteria = () => {
-  const [SelectedValue, setSelectedValue]= useState('')
+  const [SelectedValue, setSelectedValue]= useState({
+    country:'', continent: '', category:''
+  })
  
 
   const {data: countries }= useGetCountriesQuery()
@@ -28,25 +30,6 @@ const SearchCriteria = () => {
       console.log(continents)
       console.log(countries)
    
-  function SelectComponent({array, label}){
-        return( <select value={SelectedValue} onChange={(e)=>handleSelectChange(e)}>
-                <label>Select {label}:</label>
-                {array.map(object=>(
-                  Object.entries(object).map(([key, value])=>(
-                    <option key={key} value={key}>{value}</option>
-                  )) 
-                ))
-                }
-                <p>{SelectedValue}</p>
-              </select>)
-  }
-
-  const  handleSelectChange=(event)=>{
-    const value=event.target.value
-    setSelectedValue(value)
-  }
-      
-  
   return (
     <main className="landing">
       <div className="searches">
@@ -73,18 +56,33 @@ const SearchCriteria = () => {
           }
         </div>
       </div>
+      <div className="outlet"><Outlet/></div>
       <div className="select">
         <div className='search-dropdown'>
-            <SelectComponent array={continents} label='continents'/>
+          <select name='continents' onChange={(e)=>setSelectedValue({...SelectedValue,continent: e.target.value })}>
+          <label>Select continent :</label>
+            {continents.map(object=>(
+                <option key={object.code} value={object.name}>{object.name}</option>
+                ))}
+            </select>
         </div>
         <div className='search-dropdown'>
-            <SelectComponent array={countries} label='countries'/>
+          <select name='categoreis' onChange={(e)=>setSelectedValue({...SelectedValue,category: e.target.value })}>
+          <label>Select category :</label>
+            {categories.map(object=>(
+                <option key={object.code} value={object.name}>{object.name}</option>
+            ))}
+          </select>
         </div>
         <div className='search-dropdown'>
-            <SelectComponent array={categories} label='categories'/>
+          <select name='countries' onChange={(e)=>setSelectedValue({...SelectedValue,country: e.target.value })}>
+          <label>Select country :</label>
+            {countries.map(object=>(
+                <option key={object.code} value={object.name}>{object.name}</option>
+                ))}
+            </select>
         </div>
       </div>
-      <div className="outlet"><Outlet/></div>
     </main>
   )
 }
