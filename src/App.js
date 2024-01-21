@@ -9,8 +9,14 @@ function App() {
     
     <Router>
       <Routes>
-        <Route path='/' element={<SearchCriteria/>}>
+        <Route path='/webcams/' element={<SearchCriteria/>}>
           <Route index element={<Landing/>}/>
+          <Route path='country/:countryname'/>
+          <Route path='category/:countryname'/>
+          <Route path='continent/:categoryname'/>
+          <Route path='nearbysearch/:nearby'/>
+          <Route path='geographicalsearch/:bbox'/>
+          <Route path=':webcamId'/>
         </Route>
       </Routes>
     </Router>

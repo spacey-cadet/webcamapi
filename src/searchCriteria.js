@@ -39,21 +39,21 @@ const SearchCriteria = () => {
           <h5>Continents</h5>
         {
         continents.length ? (continents.map(continent=>(
-              <div key={continent.id}>{continent.name}</div>
+              <Link key={continent.id}>{continent.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='categories'>
           <h5>Categories</h5>
           {
         categories.length ? (categories.map(category=>(
-              <div key={category.id}>{category.name}</div>
+              <Link key={category.id}>{category.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='countries'>
           <h5>Countries</h5>
           {
             countries.length ? (countries.map(country=>(
-                <div key={country.id}>{country.name}</div>
+                <Link key={country.id}>{country.name}</Link>
             ))) : (<div>Something went wrong</div>)
           }
         </div>
