@@ -1,6 +1,7 @@
 import { useGetWebcamsQuery } from "./features/apiSlice"
+import WebcamBoxComponent from "./webcam"
 
-const Landing = () => {
+const LandingWebcamsComponent = () => {
 
   const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetWebcamsQuery()
 
@@ -18,13 +19,10 @@ const Landing = () => {
   return (
     <div className='webcams'>
       {webcams.map(webcam=>(
-        <div className='webcam' key={webcam.webcamId}>
-          <img src={webcam.images.current.preview} alt=""/>
-          <div className="webcamsInfo">{webcam.title}</div>
-        </div>
+        <WebcamBoxComponent webcam={webcam}/>
       ))}
     </div>
   )
 }
 
-export default Landing
+export default LandingWebcamsComponent

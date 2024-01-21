@@ -5,7 +5,7 @@ import { useGetCategoriesQuery,useGetCountriesQuery,
     import { useState } from "react"
 
 
-const SearchCriteria = () => {
+const SearchCriteriaComponent = () => {
   const [SelectedValue, setSelectedValue]= useState({
     country:'', continent: '', category:''
   })
@@ -39,21 +39,21 @@ const SearchCriteria = () => {
           <h5>Continents</h5>
         {
         continents.length ? (continents.map(continent=>(
-              <Link key={continent.id}>{continent.name}</Link>
+              <Link key={continent.id} to={`continent/${continent.name}`}>{continent.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='categories'>
           <h5>Categories</h5>
           {
         categories.length ? (categories.map(category=>(
-              <Link key={category.id}>{category.name}</Link>
+              <Link key={category.id} to={`category/${category.name}`}>{category.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='countries'>
           <h5>Countries</h5>
           {
             countries.length ? (countries.map(country=>(
-                <Link key={country.id}>{country.name}</Link>
+                <Link key={country.id} to={`country/${country.name}`}>{country.name}</Link>
             ))) : (<div>Something went wrong</div>)
           }
         </div>
@@ -94,4 +94,4 @@ const SearchCriteria = () => {
   )
 }
 
-export default SearchCriteria
+export default SearchCriteriaComponent
