@@ -1,7 +1,9 @@
 import { useGetCategoriesQuery,useGetCountriesQuery,
     useGetContinentsQuery } from "./features/apiSlice"
     import { Outlet } from "react-router"
+    import { Link } from "react-router-dom"
     import { useState } from "react"
+
 
 const SearchCriteria = () => {
   const [SelectedValue, setSelectedValue]= useState({
@@ -57,7 +59,7 @@ const SearchCriteria = () => {
         </div>
       </div>
       <div className="outlet"><Outlet/></div>
-      <div className="select">
+      <form  className="select">
         <div className='search-dropdown'>
           <select name='continents' onChange={(e)=>setSelectedValue({...SelectedValue,continent: e.target.value })}>
           <label>Select continent :</label>
@@ -82,7 +84,12 @@ const SearchCriteria = () => {
                 ))}
             </select>
         </div>
-      </div>
+        <button>
+          <Link to={``}>
+              Search webcams
+          </Link>
+        </button>
+      </form>
     </main>
   )
 }
