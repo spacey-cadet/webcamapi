@@ -2,6 +2,9 @@ import './App.css';
 import { BrowserRouter as  Router, Routes,  Route } from 'react-router-dom'
 import Landing from './landing';
 import SearchCriteria from './searchCriteria';
+import CountrytResultComponent from './countryresult';
+import CategoryResultComponent from './categoryresult';
+import ContinentResultComponent from './continentresult';
 
 function App() {
 
@@ -11,9 +14,9 @@ function App() {
       <Routes>
         <Route path='/' element={<SearchCriteria/>}>
           <Route index element={<Landing/>}/>
-          <Route path='country/:countryname'/>
-          <Route path='category/:countryname'/>
-          <Route path='continent/:categoryname'/>
+          <Route path='country/:countryname' element={<CountrytResultComponent/>}/>
+          <Route path='category/:categoryname' element={<CategoryResultComponent/>}/>
+          <Route path='continent/:continentname' element= {<ContinentResultComponent/>}/>
           <Route path='nearbysearch/:nearby'/>
           <Route path='geographicalsearch/:bbox'/>
           <Route path=':webcamId'/>
