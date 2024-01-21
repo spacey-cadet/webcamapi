@@ -39,21 +39,21 @@ const SearchCriteriaComponent = () => {
           <h5>Continents</h5>
         {
         continents.length ? (continents.map(continent=>(
-              <Link key={continent.id} to={`continent/${continent.name}`}>{continent.name}</Link>
+              <Link className='link' key={continent.id} to={`continent/${continent.name}`}>{continent.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='categories'>
           <h5>Categories</h5>
           {
         categories.length ? (categories.map(category=>(
-              <Link key={category.id} to={`category/${category.name}`}>{category.name}</Link>
+              <Link className='link'  key={category.id} to={`category/${category.name}`}>{category.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='countries'>
           <h5>Countries</h5>
           {
             countries.length ? (countries.map(country=>(
-                <Link key={country.id} to={`country/${country.name}`}>{country.name}</Link>
+                <Link className='link' key={country.id} to={`country/${country.name}`}>{country.name}</Link>
             ))) : (<div>Something went wrong</div>)
           }
         </div>

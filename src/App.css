@@ -176,7 +176,10 @@ body{
     border-top: var(--size) solid black;
     top: 55%;
   }
-
+.link{
+    text-decoration: none;
+    color: #000;
+}
 
 
 
