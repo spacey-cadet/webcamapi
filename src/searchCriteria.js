@@ -2,13 +2,10 @@ import { useGetCategoriesQuery,useGetCountriesQuery,
     useGetContinentsQuery } from "./features/apiSlice"
     import { Outlet } from "react-router"
     import { Link } from "react-router-dom"
-    import { useState } from "react"
 
 
 const SearchCriteriaComponent = () => {
-  const [SelectedValue, setSelectedValue]= useState({
-    country:'', continent: '', category:''
-  })
+  
  
 
   const {data: countries }= useGetCountriesQuery()
@@ -59,37 +56,9 @@ const SearchCriteriaComponent = () => {
         </div>
       </div>
       <div className="outlet"><Outlet/></div>
-      <form  className="select">
-        <div className='search-dropdown'>
-          <select name='continents' onChange={(e)=>setSelectedValue({...SelectedValue,continent: e.target.value })}>
-          <label>Select continent :</label>
-            {continents.map(object=>(
-                <option key={object.code} value={object.name}>{object.name}</option>
-                ))}
-            </select>
-        </div>
-        <div className='search-dropdown'>
-          <select name='categoreis' onChange={(e)=>setSelectedValue({...SelectedValue,category: e.target.value })}>
-          <label>Select category :</label>
-            {categories.map(object=>(
-                <option key={object.code} value={object.name}>{object.name}</option>
-            ))}
-          </select>
-        </div>
-        <div className='search-dropdown'>
-          <select name='countries' onChange={(e)=>setSelectedValue({...SelectedValue,country: e.target.value })}>
-          <label>Select country :</label>
-            {countries.map(object=>(
-                <option key={object.code} value={object.name}>{object.name}</option>
-                ))}
-            </select>
-        </div>
-        <button>
-          <Link to={``}>
-              Search webcams
-          </Link>
-        </button>
-      </form>
+      <div className="nearby">
+        <h4>See webcams near you</h4>
+      </div>
     </main>
   )
 }

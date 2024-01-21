@@ -13,7 +13,7 @@ const LandingWebcamsComponent = () => {
     return 'something went wrong :('
   }
  
-    const webcams = webcamsobject.webcams
+    const webcams = webcamsobject && webcamsobject.webcams
     console.log(webcams)
    
   return (

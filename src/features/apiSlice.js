@@ -26,6 +26,15 @@ export const webcationAPI = createApi({
         }),
         getWebcams: builder.query({
             query: ()=> '/webcams/api/v3/webcams?&limit=20&offset=0&include=images'
+        }),
+        getContinentsWebcams: builder.query({
+            query: (continent)=> `/webcams?lang=en&limit=50&continents=${continent}`
+        }),
+        getCountryWebcams: builder.query({
+            query: (country)=> `/webcams?lang=en&limit=50&countries=${country}`
+        }),
+        getCategoryWebcams: builder.query({
+            query: (category)=> `/webcams?lang=en&limit=50&countries=${category}`
         })
     })
 })
@@ -35,5 +44,8 @@ export const {
     useGetContinentsQuery, 
     useGetWebcamByIdQuery,
     useGetCountriesQuery,
-    useGetRegionsQuery
+    useGetRegionsQuery,
+    useGetCategoryWebcamsQuery,
+    useGetContinentsWebcamsQuery,
+    useGetCountryWebcamsQuery
 } = webcationAPI
