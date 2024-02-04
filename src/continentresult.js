@@ -4,8 +4,8 @@ import { useGetContinentsWebcamsQuery} from './features/apiSlice'
 import WebcamBoxComponent from './webcam'
 
 const ContinentResultComponent = () => {
-  let { continentname }=useParams()
-  const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetContinentsWebcamsQuery(continentname)
+  let { continentcode, continentname }=useParams()
+  const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetContinentsWebcamsQuery(continentcode)
    
   if(isLoadingWebcams){
     return '...'
@@ -21,9 +21,9 @@ const ContinentResultComponent = () => {
     <div>
       <h4>Webcams for {continentname}</h4>
       <div>
-        {webcams.map(webcam=>(
+        {webcams.lenght > 0 ? webcams.map(webcam=>(
           <WebcamBoxComponent webcam={webcam}/>
-        ))}
+        )): <div>No webcams</div>}
       </div>
     </div>
   )

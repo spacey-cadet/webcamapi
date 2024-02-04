@@ -24,10 +24,10 @@ const SearchCriteriaComponent = () => {
     if(isErrorContinents){
       return 'something went wrong :('
     }
+    console.log(countries)
+    console.log(categories)
+    console.log(continents)
 
-      console.log(categories)
-      console.log(continents)
-      console.log(countries)
    
   return (
     <main className="landing">
@@ -36,21 +36,21 @@ const SearchCriteriaComponent = () => {
           <h5>Continents</h5>
         {
         continents.length ? (continents.map(continent=>(
-              <Link className='link' key={continent.id} to={`continent/${continent.name}`}>{continent.name}</Link>
+              <Link className='link' key={continent.id} to={`continent/${continent.code}/${(continent.name).replace(/\s|\//g, "")}`}>{continent.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='categories'>
           <h5>Categories</h5>
           {
         categories.length ? (categories.map(category=>(
-              <Link className='link'  key={category.id} to={`category/${category.name}`}>{category.name}</Link>
+              <Link className='link'  key={category.id} to={`category/${category.id}/${(category.name).replace(/\s|\//g, "")}`}>{category.name}</Link>
           ))) :  (<div>Something went wrong</div>)}
         </div>
         <div className='countries'>
           <h5>Countries</h5>
           {
             countries.length ? (countries.map(country=>(
-                <Link className='link' key={country.id} to={`country/${country.name}`}>{country.name}</Link>
+                <Link className='link' key={country.code} to={`country/${country.code}/${(country.name).replace(/\s|\//g, "")}`}>{country.name}</Link>
             ))) : (<div>Something went wrong</div>)
           }
         </div>

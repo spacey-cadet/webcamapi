@@ -9,21 +9,19 @@ import ContinentResultComponent from './continentresult';
 function App() {
 
   return (
-    
     <Router>
       <Routes>
         <Route path='/' element={<SearchCriteria/>}>
           <Route index element={<Landing/>}/>
-          <Route path='country/:countryname' element={<CountrytResultComponent/>}/>
-          <Route path='category/:categoryname' element={<CategoryResultComponent/>}/>
-          <Route path='continent/:continentname' element= {<ContinentResultComponent/>}/>
-          <Route path='nearbysearch/:nearby'/>
-          <Route path='geographicalsearch/:bbox'/>
+          <Route path='country/:countrycode/:countryname' element={<CountrytResultComponent/>}/>
+          <Route path='category/:categoryid/:categoryname' element={<CategoryResultComponent/>}/>
+          <Route path='continent/:continentcode/:continentname' element= {<ContinentResultComponent/>}/>
+          <Route path='nearbysearch/:nearby' />
+          <Route path='geographicalsearch/:bbox' />
           <Route path=':webcamId'/>
         </Route>
       </Routes>
     </Router>
-
   );
 }
 

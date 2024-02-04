@@ -5,8 +5,8 @@ import WebcamBoxComponent from './webcam'
 
 const CountrytResultComponent = () => {
 
-    let {countryname}= useParams()
-    const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetCountryWebcamsQuery(countryname)
+    let {countryname, countrycode}= useParams()
+    const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetCountryWebcamsQuery(countrycode)
   
     if(isLoadingWebcams){
       return '...'
@@ -16,13 +16,15 @@ const CountrytResultComponent = () => {
       return 'something went wrong :('
     }
     const webcams= webcamsobject && webcamsobject.webcams
+    console.log(webcams)
+
     return (
     <div>
         <h4>Webcams for {countryname}</h4>
         <div>
-          {webcams.map(webcam=>(
+          {webcams.length > 0 ? webcams.map(webcam=>(
             <WebcamBoxComponent webcam={webcam}/>
-          ))}
+          )): <div>No webcams</div>}
         </div>
     </div>
   )

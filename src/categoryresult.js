@@ -4,8 +4,8 @@ import { useGetCategoryWebcamsQuery } from './features/apiSlice'
 import WebcamBoxComponent from './webcam'
 
 const CategoryResultComponent = () => {
-    let {categoryname}= useParams()
-    const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetCategoryWebcamsQuery(categoryname)
+    let {categoryname, categoryid}= useParams()
+    const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetCategoryWebcamsQuery(categoryid)
   
     if(isLoadingWebcams){
       return '...'
@@ -16,13 +16,14 @@ const CategoryResultComponent = () => {
     }
 
     const webcams= webcamsobject && webcamsobject.webcams
+    console.log(webcams)
     return (
     <div>
         <h4>   Webcams for {categoryname}</h4>
         <div>
-          {webcams.map(webcam=>(
+          {webcams.length > 0 ? webcams.map(webcam=>(
             <WebcamBoxComponent webcam={webcam}/>
-          ))}
+          )): <div>No webcams</div>}
         </div>
     </div>
   )

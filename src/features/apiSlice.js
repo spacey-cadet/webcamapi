@@ -28,13 +28,13 @@ export const webcationAPI = createApi({
             query: ()=> '/webcams/api/v3/webcams?&limit=20&offset=0&include=images'
         }),
         getContinentsWebcams: builder.query({
-            query: (continent)=> `/webcams?lang=en&limit=50&continents=${continent}`
+            query: (continent)=> `/webcams/api/v3/webcams?lang=en&continents=${continent}&offset=0&include=images&limit=50`
         }),
         getCountryWebcams: builder.query({
-            query: (country)=> `/webcams?lang=en&limit=50&countries=${country}`
+            query: (country)=> `/webcams/api/v3/webcams?lang=en&countries=${country}&offset=0&include=images&limit=50`
         }),
         getCategoryWebcams: builder.query({
-            query: (category)=> `/webcams?lang=en&limit=50&countries=${category}`
+            query: (category)=> `/webcams/api/v3/webcams?lang=en&countries=${category}&offset=0&include=images&limit=50`
         })
     })
 })
