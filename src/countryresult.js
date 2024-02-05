@@ -19,7 +19,7 @@ const CountrytResultComponent = () => {
     console.log(webcams)
 
     return (
-    <div>
+    <div className='webcams'>
         <h4>Webcams for {countryname}</h4>
         <div>
           {webcams.length > 0 ? webcams.map(webcam=>(

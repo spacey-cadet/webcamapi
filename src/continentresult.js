@@ -18,7 +18,7 @@ const ContinentResultComponent = () => {
   const webcams=webcamsobject && webcamsobject.webcams
   
   return (
-    <div>
+    <div className='webcams'>
       <h4>Webcams for {continentname}</h4>
       <div>
         {webcams.lenght > 0 ? webcams.map(webcam=>(

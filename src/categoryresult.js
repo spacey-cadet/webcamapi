@@ -18,12 +18,12 @@ const CategoryResultComponent = () => {
     const webcams= webcamsobject && webcamsobject.webcams
     console.log(webcams)
     return (
-    <div>
+    <div className='webcams'>
         <h4>   Webcams for {categoryname}</h4>
         <div>
           {webcams.length > 0 ? webcams.map(webcam=>(
             <WebcamBoxComponent webcam={webcam}/>
-          )): <div>No webcams</div>}
+          )): <div >No webcams</div>}
         </div>
     </div>
   )

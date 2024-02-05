@@ -57,7 +57,7 @@ const SearchCriteriaComponent = () => {
       </div>
       <div className="outlet"><Outlet/></div>
       <div className="nearby">
-        <h4>See webcams near you</h4>
+        <Link to="nearbysearch" className="button link" >See webcams near you</Link>
       </div>
     </main>
   )
