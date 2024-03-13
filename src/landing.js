@@ -1,28 +1,28 @@
-import { useGetWebcamsQuery } from "./features/apiSlice"
-import WebcamBoxComponent from "./webcam"
+/* eslint-disable react/react-in-jsx-scope */
+import { useGetWebcamsQuery } from "./features/apiSlice";
+import WebcamBoxComponent from "./webcam";
 
 const LandingWebcamsComponent = () => {
+    const { data: webcamsobject, isLoading: isLoadingWebcams, isError: isErrorWebcams } = useGetWebcamsQuery();
 
-  const {data: webcamsobject , isLoading: isLoadingWebcams, isError: isErrorWebcams }= useGetWebcamsQuery()
+    if (isLoadingWebcams) {
+        return '...';
+    }
 
-  if(isLoadingWebcams){
-    return '...'
-  }
+    if (isErrorWebcams) {
+        return 'something went wrong :(';
+    }
 
-  if(isErrorWebcams){
-    return 'something went wrong :('
-  }
- 
-    const webcams = webcamsobject && webcamsobject.webcams
-    console.log(webcams)
-   
-  return (
-    <div className='webcams'>
-      {webcams.map(webcam=>(
-        <WebcamBoxComponent webcam={webcam}/>
-      ))}
-    </div>
-  )
-}
+    const webcams = webcamsobject && webcamsobject.webcams;
+    console.log(webcams);
 
-export default LandingWebcamsComponent
+    return (
+        <div className="webcams">
+            {webcams.map(webcam => (
+                <WebcamBoxComponent webcam={webcam}/>
+            ))}
+        </div>
+    );
+};
+
+export default LandingWebcamsComponent;
