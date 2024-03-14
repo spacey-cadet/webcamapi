@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 export default function GetLocationComponent () {

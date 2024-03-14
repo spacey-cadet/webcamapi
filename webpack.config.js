@@ -4,7 +4,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports={
+module.exports = {
     devtool: "source-map",
     entry: {
         bundle: path.resolve(__dirname, 'src/index.js')
@@ -20,7 +20,7 @@ module.exports={
         minimize: true,
         minimizer: [new TerserPlugin()]
     },
-    module:{
+    module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
@@ -36,20 +36,19 @@ module.exports={
                 test: /\.(png|jpeg|svg|gif|ico|jpg)$/i,
                 type: 'asset/resource'
             }
-        ],
-    },
-    plugin: [
-            new HtmlWebpackPlugin({
-                title: "HarambeeStats",
-                filename: 'index.html',
-                template: './public/index.html',
-                favicon: './public/HarambeeStatsFavicon.svg'
-            }),
-            //instead of eslint loader
-            new ESLintPlugin(),
-            //plugin to separate css files so they can be cached in production
-            new MiniCssExtractPlugin({
-                filename: 'css/[name][contenthash].css'
-            })
         ]
-}
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "SeeWorld",
+            filename: 'index.html',
+            template: './public/index.html'
+        }),
+        //instead of eslint loader
+        new ESLintPlugin(),
+        //plugin to separate css files so they can be cached in production
+        new MiniCssExtractPlugin({
+            filename: 'css/[name][contenthash].css'
+        })
+    ]
+};

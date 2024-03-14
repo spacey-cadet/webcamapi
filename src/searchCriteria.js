@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import { useGetCategoriesQuery, useGetCountriesQuery,
     useGetContinentsQuery } from "./features/apiSlice";
 import { Outlet } from "react-router";

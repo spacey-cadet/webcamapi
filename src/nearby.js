@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import { useParams } from "react-router-dom";
 
 export default async function NearbyWebcamsComponent () {

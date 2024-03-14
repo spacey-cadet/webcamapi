@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import { useGetWebcamsQuery } from "./features/apiSlice";
 import WebcamBoxComponent from "./webcam";
 
