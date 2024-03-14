@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { Outlet } from "react-router";
 
 export default function GetLocationComponent () {
     const navigate = useNavigate();
@@ -29,23 +30,19 @@ export default function GetLocationComponent () {
                 alert("request timeout");
                 break;
             case error.UKNOWN_ERROR:
-                alert("Something ent wrong");
+                alert("Something went wrong");
                 break;
             default:
                 alert("Something went wrong");
                 break;
         }
     }
+    useEffect(() => {
+        getLocation();
+    });
     return (
         <div>
-            Get My Location
-            <span>
-                Allow this website to acess your location
-                <div>
-                    <span onClick={getLocation()}>Yes</span>
-                    <span onClick={navigate("446.54,7.98,10")}>No</span>
-                </div>
-            </span>
+            <Outlet/>
         </div>
     );
 }

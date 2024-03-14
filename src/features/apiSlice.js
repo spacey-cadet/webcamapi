@@ -38,7 +38,7 @@ export const webcationAPI = createApi({
             query: (category) => `/webcams/api/v3/webcams?lang=en&countries=${category}&offset=0&include=images&limit=50`
         }),
         getNearbyWebcams: builder.query({
-            query: () => `/webcams/api/v3/webcams?nearby=446.54,7.98,5446.54,7.98,5`
+            query: (specs) => `/webcams/api/v3/webcams?nearby=${specs},10`
         })
     })
 });

@@ -148,6 +148,19 @@ body{
     background-color: azure;
 }
 
+/*header*/
+.header_div{
+    border-bottom: 1px solid  black;
+    box-shadow: 1px 1px 1px ; 
+}
+
+.header span{
+    border-radius: 3px;
+    background-color: rgb(46, 45, 45);
+}
+
+/*Location*/
+
 
 
 
