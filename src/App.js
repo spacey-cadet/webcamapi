@@ -20,9 +20,8 @@ function App () {
                         <Route path="country/:countrycode/:countryname" element={<CountrytResultComponent/>}/>
                         <Route path="category/:categoryid/:categoryname" element={<CategoryResultComponent/>}/>
                         <Route path="continent/:continentcode/:continentname" element= {<ContinentResultComponent/>}/>
-                        <Route path="nearbysearch" element={<GetLocationComponent/>}>
-                            <Route path=":nearby" element={<NearbyWebcamsComponent/>}/>
-                        </Route>
+                        <Route path="sharelocation" element={<GetLocationComponent/>}/>
+                        <Route path=":nearby" element={<NearbyWebcamsComponent/>}/>
                         <Route path="geographicalsearch/:bbox" />
                         <Route path=":webcamId"/>
                     </Route>

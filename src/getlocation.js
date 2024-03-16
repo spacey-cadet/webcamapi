@@ -1,7 +1,6 @@
 /* eslint-disable no-alert */
-import React, { useEffect } from 'react';
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Outlet } from "react-router";
 
 export default function GetLocationComponent () {
     const navigate = useNavigate();
@@ -15,13 +14,14 @@ export default function GetLocationComponent () {
     }
 
     function returnPositon (position) {
-        navigate(`${position.coords.latitude}, ${position.coords.longitude}, 10`);
+        console.log(position);
+        navigate(`/${position.coords.latitude},${position.coords.longitude},10`);
     }
 
     function returnError (error) {
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                alert("User denied acess ");
+                alert("User denied access ");
                 break;
             case error.POSITION_UNAVAILABLE:
                 alert("Location Information is unavailable");
@@ -37,12 +37,13 @@ export default function GetLocationComponent () {
                 break;
         }
     }
-    useEffect(() => {
-        getLocation();
-    });
     return (
-        <div>
-            <Outlet/>
+        <div className="sharelocation">
+            <div className="location-btns">
+                <button onClick={getLocation}>
+                    Share location
+                </button>
+            </div>
         </div>
     );
 }

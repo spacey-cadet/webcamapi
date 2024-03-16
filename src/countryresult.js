@@ -16,8 +16,6 @@ const CountrytResultComponent = () => {
         return 'something went wrong :(';
     }
     const webcams = webcamsobject && webcamsobject.webcams;
-    console.log(webcams);
-
     return (
         <div className="webcams">
             <h4>Webcams for {countryname}</h4>

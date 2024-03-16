@@ -17,7 +17,6 @@ const CategoryResultComponent = () => {
     }
 
     const webcams = webcamsobject && webcamsobject.webcams;
-    console.log(webcams);
     return (
         <div className="webcams">
             <h4>   Webcams for {categoryname}</h4>

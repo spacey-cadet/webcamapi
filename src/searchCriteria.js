@@ -52,11 +52,13 @@ const SearchCriteriaComponent = () => {
                         ))) : (<div>Something went wrong</div>)
                     }
                 </div>
+
+                <div className="nearby">
+                    <Link to="sharelocation" className="button link" >See webcams near you</Link>
+                </div>
             </div>
             <div className="outlet"><Outlet/></div>
-            <div className="nearby">
-                <Link to="nearbysearch" className="button link" >See webcams near you</Link>
-            </div>
+
         </main>
     );
 };

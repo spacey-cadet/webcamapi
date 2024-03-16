@@ -14,7 +14,6 @@ const LandingWebcamsComponent = () => {
     }
 
     const webcams = webcamsobject && webcamsobject.webcams;
-    console.log(webcams);
 
     return (
         <div className="webcams">

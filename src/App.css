@@ -109,10 +109,16 @@ body{
     border-radius: 5px 5px 0px 0px;
 }
 .webcams .webcam .webcamsInfo{
+    display: flex;
     padding: 0.5rem;
     background-color: rgb(46, 45, 45);
     color: whitesmoke;
+    justify-content: space-between;
 }
+.webcams .webcam .webcamsInfo .views{
+    color: green;
+}
+
 
 
 
@@ -136,8 +142,9 @@ body{
 }
 
 .nearby .button{
+    position: relative;
     border: 1px solid black;
-    box-shadow: 1px 1px 1px ;
+    border-radius: 2px;
     width: fit-content;
     padding: .5px;
     font-size: 17px;
@@ -145,13 +152,18 @@ body{
 }
 .nearby .button:hover{
     cursor: pointer;
-    background-color: azure;
+    background-color: transparent;
 }
 
 /*header*/
 .header_div{
     border-bottom: 1px solid  black;
-    box-shadow: 1px 1px 1px ; 
+}
+.header{
+    padding-left: 5rem;
+}
+.header:hover{
+    cursor: default;
 }
 
 .header span{
@@ -160,6 +172,23 @@ body{
 }
 
 /*Location*/
+.sharelocation{
+    display: flex;
+    flex-direction: column;
+}
+.location-btns{
+    display: flex;
+    flex-direction: row;
+}
+.location-btns button{
+    border: 1px solid black;
+    padding: .5rem;
+}
+.location-btns button:hover{
+    cursor: pointer;
+}
+
+
 
 
 

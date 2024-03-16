@@ -17,7 +17,7 @@ export default async function NearbyWebcamsComponent () {
     }
 
     const webcams = webcamsobject && webcamsobject.webcams;
-
+    console.log(webcams);
     return (
         <div>
             <p>Webcams near you</p>
