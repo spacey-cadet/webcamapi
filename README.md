@@ -1,5 +1,5 @@
 ## React app
-React is a Javasript frontend framework that makes creating UI much easier. React enables programmers to add javascript code directly into the markup. React does this using Javascript XML(JSX). JSX uses function components or class components to achieve this. 
+React is a Javascript frontend framework that makes creating UI much easier. React enables programmers to add javascript code directly into the markup. React does this using Javascript XML(JSX). JSX uses function components or class components to achieve this. 
 <br>
 
 This simple app displays webcams and the UI is build using react.
