@@ -1,38 +1,39 @@
 ## React app
 React is a Javasript frontend framework that makes creating UI much easier. React enables programmers to add javascript code directly into the markup. React does this using Javascript XML(JSX). JSX uses function components or class components to achieve this. 
+<br>
 
 This simple app displays webcams and the UI is build using react.
 
 ## Dependencies
-### Dev deps
-Webpack 
-webpack-cli 
-web-pack-dev-sever 
-@babel/eslint-parser
-babel-loader
-css-loader
-eslint
-eslint-config-react
-eslint-plugin-reac
-eslint-webpack-plugin
-html-webpack-plugin"
-mini-css-extract-plugin
-prettier
-style-loader,
-terser-webpack-plugin
+### Dev dependencies
+-Webpack 
+--webpack-cli 
+--web-pack-dev-sever 
+--@babel/eslint-parser
+--babel-loader
+--css-loader
+--eslint
+--eslint-config-react
+--eslint-plugin-reac
+--eslint-webpack-plugin
+--html-webpack-plugin"
+--mini-css-extract-plugin
+--prettier
+--style-loader,
+--terser-webpack-plugin
 
-### Deps
-@babel/core
-@babel/preset-env
-@babel/preset-react
-@babel/register
-@reduxjs/toolkit
-react
-react-do
-react-icons
-react-redux
-react-router-dom
-web-vitals
+### Dependencies
+-@babel/core
+-@babel/preset-env
+-@babel/preset-react
+-@babel/register
+-@reduxjs/toolkit
+-react
+-react-do
+-react-icons
+-react-redux
+-react-router-dom
+-web-vitals
 
 
 
@@ -72,10 +73,10 @@ specify the output files inside of the build folder of compiles javascript files
                 }
             ]   
     } ````
-    Specify how the modules are going to be transpliled.  
-    Babel-loader wil transpile react code(JSX) and ECMASript JS into native Javascript. 
-    Use the css-loader to tranf=pile newer css syntax to older css syntax.
-    Add images and Icons into the build as assets/resources
+    Specify how the modules are going to be transpliled.  <br>
+    Babel-loader wil transpile react code(JSX) and ECMASript JS into native Javascript. <br>
+    Use the css-loader to tranf=pile newer css syntax to older css syntax.<br>
+    Add images and Icons into the build as assets/resources<br>
 
 ````  plugins: [
         new HtmlWebpackPlugin({
@@ -91,9 +92,9 @@ specify the output files inside of the build folder of compiles javascript files
         })
     ]````
 
-    Use htmlwebpack plugin to generate a html documement using a template.  
+    Use htmlwebpack plugin to generate a html documement using a template.  <br>
     Htmlwebpack plugin for webpack docs: ![https://webpack.js.org/plugins/html-webpack-plugin/]
-    MiniCssExractPlugin separates css files so they can be cached in production
+    MiniCssExractPlugin separates css files so they can be cached in production <br>
 
 
 ### Babel
@@ -107,8 +108,8 @@ Use a babel.config.json to configure babel.
     ]
 }````
 
-Babel use preset-react to transpile react to native Javascript
-Babel use preset-env to ensure transpliled code is compatible with the environents you want such as Node.js versions and  Browers
+Babel use preset-react to transpile react to native Javascript<br>
+Babel use preset-env to ensure transpliled code is compatible with the environents you want such as Node.js versions and  browers
 
 ### Eslint
 Use a .eslintrc file to configure eslint.
@@ -148,8 +149,13 @@ Use prettier to get more organized and readable code.
         "build": "webpack --mode production"
     } ````
 
+
 ## Deployment
 
-Deploy on github pages
+Deploy on github pages <br>
+In the repository, go to settings then select pages. <br>
+You can add a custom domain. Buy a domain name from a verified vendor such as NameCheap.<br>
+Customize the DNS Settings. Use either an A recored or a CNAME <br>
+Refer to the gitbub docs: ![https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site]
 
 
