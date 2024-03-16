@@ -5,9 +5,35 @@ This simple app displays webcams and the UI is build using react.
 
 ## Dependencies
 ### Dev deps
-Webpack - Complites javascript code and injects is into the DOM 
-webpack-cli - 
-web-pack-dev-sever - for development
+Webpack 
+webpack-cli 
+web-pack-dev-sever 
+@babel/eslint-parser
+babel-loader
+css-loader
+eslint
+eslint-config-react
+eslint-plugin-reac
+eslint-webpack-plugin
+html-webpack-plugin"
+mini-css-extract-plugin
+prettier
+style-loader,
+terser-webpack-plugin
+
+### Deps
+@babel/core
+@babel/preset-env
+@babel/preset-react
+@babel/register
+@reduxjs/toolkit
+react
+react-do
+react-icons
+react-redux
+react-router-dom
+web-vitals
+
 
 
 ## Configurations
@@ -121,9 +147,6 @@ Use prettier to get more organized and readable code.
         "eslint-fix": "eslint --fix \"src/**/*.js\"",
         "build": "webpack --mode production"
     } ````
-
-## Testing
-
 
 ## Deployment
 
