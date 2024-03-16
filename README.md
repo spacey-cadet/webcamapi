@@ -1,11 +1,132 @@
-## Build react app from scratch
+## React app
+React is a Javasript frontend framework that makes creating UI much easier. React enables programmers to add javascript code directly into the markup. React does this using Javascript XML(JSX). JSX uses function components or class components to achieve this. 
+
+This simple app displays webcams and the UI is build using react.
 
 ## Dependencies
+### Dev deps
+Webpack - Complites javascript code and injects is into the DOM 
+webpack-cli - 
+web-pack-dev-sever - for development
+
 
 ## Configurations
+### Webpack
+Configure webpack using a webpack.config.js file. Define the enrty point into the app 
+````  entry: {
+        bundle: path.resolve(__dirname, 'src/index.js')
+    } ```
+Define the output folder
+````  output: {
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/',
+        filename: 'js/[name].[contenthash].js',
+        assetModuleFilename: '[name].[ext]',
+        clean: true
+    } 
+````
+clean is set to true so that old bundles are removed when building a fresh. 
+specify the output files inside of the build folder of compiles javascript files and css modules. 
+
+````    module: {
+            rules: [
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: ['babel-loader']
+                },
+                {
+                    test: /\.css$/i,
+                    //using MiniCssExtractPlugin since our app is already in production
+                    use: [MiniCssExtractPlugin.loader, "css-loader"]
+                },
+                {
+                    test: /\.(png|jpeg|svg|gif|ico|jpg)$/i,
+                    type: 'asset/resource'
+                }
+            ]   
+    } ````
+    Specify how the modules are going to be transpliled.  
+    Babel-loader wil transpile react code(JSX) and ECMASript JS into native Javascript. 
+    Use the css-loader to tranf=pile newer css syntax to older css syntax.
+    Add images and Icons into the build as assets/resources
+
+````  plugins: [
+        new HtmlWebpackPlugin({
+            title: "SeeWorld",
+            filename: 'index.html',
+            template: './public/index.html'
+        }),
+     
+        new ESLintPlugin(),
+    
+        new MiniCssExtractPlugin({
+            filename: 'css/[name][contenthash].css'
+        })
+    ]````
+
+    Use htmlwebpack plugin to generate a html documement using a template.  
+    Htmlwebpack plugin for webpack docs: ![https://webpack.js.org/plugins/html-webpack-plugin/]
+    MiniCssExractPlugin separates css files so they can be cached in production
+
+
+### Babel
+Use a babel.config.json to configure babel.
+
+````
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
+}````
+
+Babel use preset-react to transpile react to native Javascript
+Babel use preset-env to ensure transpliled code is compatible with the environents you want such as Node.js versions and  Browers
+
+### Eslint
+Use a .eslintrc file to configure eslint.
+
+````{
+    "parser": "@babel/eslint-parser",
+    "extends": "react",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }````
+
+  Eslint finds sytax error realted to JavaScript code. 
+  So basically hepls write clean Javasript code without all the hassle 
+
+### Prettier
+Use prettier to get more organized and readable code.
+````
+{
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+   }````
 
 ## Scripts
+````   "scripts": {
+        "start": "webpack-dev-server --mode development",
+        "format": "prettier --write \"src/**/*.js\"",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "eslint-fix": "eslint --fix \"src/**/*.js\"",
+        "build": "webpack --mode production"
+    } ````
+
+## Testing
+
 
 ## Deployment
+
+Deploy on github pages
 
 
