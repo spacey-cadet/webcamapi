@@ -16,8 +16,8 @@ const LandingWebcamsComponent = () => {
     const webcams = webcamsobject && webcamsobject.webcams;
 
     return (
-        <div className="webcams">
-            {webcams.map(webcam => (
+        <div className="webcams" key="webcams">
+            {webcams && webcams.map(webcam => (
                 <WebcamBoxComponent webcam={webcam}/>
             ))}
         </div>

@@ -9,6 +9,7 @@ import ContinentResultComponent from './continentresult';
 import GetLocationComponent from './getlocation';
 import NearbyWebcamsComponent from './nearby';
 import HeaderComponent from './header';
+import ErrorPage from './Error';
 
 function App () {
     return (
@@ -26,6 +27,7 @@ function App () {
                         <Route path=":webcamId"/>
                     </Route>
                 </Route>
+                <Route path="*" element={<ErrorPage/>}/>
             </Routes>
         </Router>
     );

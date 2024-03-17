@@ -22,34 +22,30 @@ const SearchCriteriaComponent = () => {
     if (isErrorContinents) {
         return 'something went wrong :(';
     }
-    console.log(countries);
-    console.log(categories);
-    console.log(continents);
 
 
     return (
         <main className="landing">
             <div className="searches">
-                <div className="continents">
+                <div className="continents" key="continents">
                     <h5>Continents</h5>
                     {
-                        continents.length ? (continents.map(continent => (
+                        continents ? (continents.map(continent => (
                             <Link className="link" key={continent.id} to={`continent/${continent.code}/${(continent.name).replace(/\s|\//g, "")}`}>{continent.name}</Link>
                         ))) : (<div>Something went wrong</div>)}
                 </div>
-                <div className="categories">
+                <div className="categories" key="categories">
                     <h5>Categories</h5>
                     {
-                        categories.length ? (categories.map(category => (
+                        categories ? (categories.map(category => (
                             <Link className="link" key={category.id} to={`category/${category.id}/${(category.name).replace(/\s|\//g, "")}`}>{category.name}</Link>
                         ))) : (<div>Something went wrong</div>)}
                 </div>
-                <div className="countries">
+                <div className="countries" key="countries">
                     <h5>Countries</h5>
-                    {
-                        countries.length ? (countries.map(country => (
-                            <Link className="link" key={country.code} to={`country/${country.code}/${(country.name).replace(/\s|\//g, "")}`}>{country.name}</Link>
-                        ))) : (<div>Something went wrong</div>)
+                    { countries ? (countries.map(country => (
+                        <Link className="link" key={country.code} to={`country/${country.code}/${(country.name).replace(/\s|\//g, "")}`}>{country.name}</Link>
+                    ))) : (<div>Something went wrong</div>)
                     }
                 </div>
 

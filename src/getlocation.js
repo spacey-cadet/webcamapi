@@ -14,8 +14,7 @@ export default function GetLocationComponent () {
     }
 
     function returnPositon (position) {
-        console.log(position);
-        navigate(`/${position.coords.latitude},${position.coords.longitude},10`);
+        navigate(`/#`);
     }
 
     function returnError (error) {
@@ -40,8 +39,9 @@ export default function GetLocationComponent () {
     return (
         <div className="sharelocation">
             <div className="location-btns">
+                <p>You can see webcams for surrounding places. Would you like to share your location?</p>
                 <button onClick={getLocation}>
-                    Share location
+                    Share Location
                 </button>
             </div>
         </div>

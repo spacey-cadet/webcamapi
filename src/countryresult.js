@@ -20,7 +20,7 @@ const CountrytResultComponent = () => {
         <div className="webcams">
             <h4>Webcams for {countryname}</h4>
             <div>
-                {webcams.length > 0 ? webcams.map(webcam => (
+                {webcams ? webcams.map(webcam => (
                     <WebcamBoxComponent webcam={webcam}/>
                 )) : <div>No webcams</div>}
             </div>

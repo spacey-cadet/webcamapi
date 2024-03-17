@@ -98,7 +98,7 @@ body{
 }
 .webcams .webcam{
     border: 1px solid black;
-    width: fit-content;
+    width: 450px;
     border-radius: 5px 5px 0px 0px;
     display: flex;
     flex-direction: column;
@@ -178,15 +178,42 @@ body{
 }
 .location-btns{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .location-btns button{
     border: 1px solid black;
+    border-radius: 3px;
     padding: .5rem;
+    width: fit-content;
+}
+.location-btns p{
+    font-size: 2rem;
+    background:  -webkit-linear-gradient(rgb(59, 58, 58), rgb(87, 83, 83));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .location-btns button:hover{
     cursor: pointer;
 }
+/*error page*/
+.error-page{
+    color: inherit;
+    background-color: inherit;
+}
+.error-info{
+    font-size: 2rem;
+}
+.error-info span{
+    background:  -webkit-linear-gradient(rgb(59, 58, 58), rgb(87, 83, 83));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 
 
 

@@ -9,19 +9,20 @@ export default async function NearbyWebcamsComponent () {
     const { data: webcamsobject, isLoading: isLoadingWebcams, isError: isErrorWebcams } = useGetNearbyWebcamsQuery(nearby);
 
     if (isLoadingWebcams) {
+        console.log('....');
         return '...';
     }
 
     if (isErrorWebcams) {
         return 'something went wrong :(';
     }
-
+    console.log('success');
     const webcams = webcamsobject && webcamsobject.webcams;
     console.log(webcams);
     return (
         <div>
             <p>Webcams near you</p>
-            {webcams.length > 0 ? webcams.map(webcam => (
+            {webcams ? webcams.map(webcam => (
                 <WebcamBoxComponent webcam={webcam}/>
             )) : <div >No webcams</div>}
         </div>
