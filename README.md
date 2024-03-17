@@ -42,8 +42,11 @@ This simple app displays webcams and the UI is build using react.
 Configure webpack using a webpack.config.js file. Define the enrty point into the app 
 ````  entry: {
         bundle: path.resolve(__dirname, 'src/index.js')
-    } ```
+    }
+````
+
 Define the output folder
+
 ````  output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
@@ -72,7 +75,8 @@ specify the output files inside of the build folder of compiles javascript files
                     type: 'asset/resource'
                 }
             ]   
-    } ````
+    } 
+````
     Specify how the modules are going to be transpliled.  <br>
     Babel-loader wil transpile react code(JSX) and ECMASript JS into native Javascript. <br>
     Use the css-loader to tranf=pile newer css syntax to older css syntax.<br>
@@ -90,10 +94,11 @@ specify the output files inside of the build folder of compiles javascript files
         new MiniCssExtractPlugin({
             filename: 'css/[name][contenthash].css'
         })
-    ]````
+    ]
+````
 
     Use htmlwebpack plugin to generate a html documement using a template.  <br>
-    Htmlwebpack plugin for webpack docs: ![https://webpack.js.org/plugins/html-webpack-plugin/]
+    Htmlwebpack plugin for webpack docs: [https://webpack.js.org/plugins/html-webpack-plugin/]
     MiniCssExractPlugin separates css files so they can be cached in production <br>
 
 
@@ -106,7 +111,9 @@ Use a babel.config.json to configure babel.
         "@babel/preset-env",
         "@babel/preset-react"
     ]
-}````
+}
+
+````
 
 Babel use preset-react to transpile react to native Javascript<br>
 Babel use preset-env to ensure transpliled code is compatible with the environents you want such as Node.js versions and  browers
@@ -114,7 +121,8 @@ Babel use preset-env to ensure transpliled code is compatible with the environen
 ### Eslint
 Use a .eslintrc file to configure eslint.
 
-````{
+````
+{
     "parser": "@babel/eslint-parser",
     "extends": "react",
     "env": {
@@ -126,7 +134,8 @@ Use a .eslintrc file to configure eslint.
         "version": "detect"
       }
     }
-  }````
+  }
+  ````
 
   Eslint finds sytax error realted to JavaScript code. 
   So basically hepls write clean Javasript code without all the hassle 
@@ -138,7 +147,8 @@ Use prettier to get more organized and readable code.
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-   }````
+   }
+````
 
 ## Scripts
 ````   "scripts": {
@@ -147,7 +157,8 @@ Use prettier to get more organized and readable code.
         "test": "echo \"Error: no test specified\" && exit 1",
         "eslint-fix": "eslint --fix \"src/**/*.js\"",
         "build": "webpack --mode production"
-    } ````
+    } 
+````
 
 
 ## Deployment
@@ -156,6 +167,6 @@ Deploy on github pages <br>
 In the repository, go to settings then select pages. <br>
 You can add a custom domain. Buy a domain name from a verified vendor such as NameCheap.<br>
 Customize the DNS Settings. Use either an A recored or a CNAME <br>
-Refer to the gitbub docs: ![https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site]
+Refer to the gitbub docs: [https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site]
 
 
