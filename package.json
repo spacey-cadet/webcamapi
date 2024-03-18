@@ -3,10 +3,10 @@
     "main": "index.js",
     "homepage": "https://Theo-Matross.github.io/webcamapi",
     "scripts": {
+        "deploy": "gh-pages -d build",
         "start": "webpack-dev-server --mode development",
         "format": "prettier --write \"src/**/*.js\"",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "deploy": "gh-pages -d build",
         "eslint-fix": "eslint --fix \"src/**/*.js\"",
         "build": "webpack --mode production"
     },
