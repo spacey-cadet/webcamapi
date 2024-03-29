@@ -40,14 +40,16 @@ This simple app displays webcams and the UI is build using react.
 ## Configurations
 ### Webpack
 Configure webpack using a webpack.config.js file. Define the enrty point into the app 
-````  entry: {
+````
+entry: {
         bundle: path.resolve(__dirname, 'src/index.js')
     }
 ````
 
 Define the output folder
 
-````  output: {
+````
+ output: {
         path: path.resolve(__dirname, 'build'),
         publicPath: '/',
         filename: 'js/[name].[contenthash].js',
@@ -58,7 +60,8 @@ Define the output folder
 clean is set to true so that old bundles are removed when building a fresh. 
 specify the output files inside of the build folder of compiles javascript files and css modules. 
 
-````    module: {
+````
+ module: {
             rules: [
                 {
                     test: /\.(js|jsx)$/,
@@ -77,12 +80,13 @@ specify the output files inside of the build folder of compiles javascript files
             ]   
     } 
 ````
-    Specify how the modules are going to be transpliled.  <br>
-    Babel-loader wil transpile react code(JSX) and ECMASript JS into native Javascript. <br>
-    Use the css-loader to tranf=pile newer css syntax to older css syntax.<br>
-    Add images and Icons into the build as assets/resources<br>
-
-````  plugins: [
+Specify how the modules are going to be transpliled.  <br>
+Babel-loader wil transpile react code(JSX) and ECMASript JS into native Javascript. <br>
+Use the css-loader to tranf=pile newer css syntax to older css syntax.<br>
+Add images and Icons into the build as assets/resources<br>
+    
+````
+plugins: [
         new HtmlWebpackPlugin({
             title: "SeeWorld",
             filename: 'index.html',
@@ -96,11 +100,11 @@ specify the output files inside of the build folder of compiles javascript files
         })
     ]
 ````
+Use htmlwebpack plugin to generate a html documement using a template.  <br>
+Htmlwebpack plugin for webpack docs: [https://webpack.js.org/plugins/html-webpack-plugin/]
+MiniCssExractPlugin separates css files so they can be cached in production <br>
 
-    Use htmlwebpack plugin to generate a html documement using a template.  <br>
-    Htmlwebpack plugin for webpack docs: [https://webpack.js.org/plugins/html-webpack-plugin/]
-    MiniCssExractPlugin separates css files so they can be cached in production <br>
-
+  
 
 ### Babel
 Use a babel.config.json to configure babel.
@@ -151,7 +155,8 @@ Use prettier to get more organized and readable code.
 ````
 
 ## Scripts
-````   "scripts": {
+````
+"scripts": {
         "start": "webpack-dev-server --mode development",
         "format": "prettier --write \"src/**/*.js\"",
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -164,7 +169,9 @@ Use prettier to get more organized and readable code.
 ## Deployment
 
 Deploy on github pages <br>
-In the repository, go to settings then select pages. <br>
+See the githubworkflows folder has the details of the deployment. <br>
+
+
 You can add a custom domain. Buy a domain name from a verified vendor such as NameCheap.<br>
 Customize the DNS Settings. Use either an A recored or a CNAME <br>
 Refer to the gitbub docs: [https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site]
